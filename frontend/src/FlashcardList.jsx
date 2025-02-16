@@ -105,7 +105,7 @@ const FlashcardApp = () => {
     const newBox = isCorrect ? Math.min(selectedCard.box + 1, 5) : 1;
 
     try {
-      const response = await fetch(`https://alfredtask-ydv9.onrender.com/flashcards/${selectedCard._id}`, {
+      const response = await fetch(`https://alfredtask-ydv9.onrender.com/api/flashcards/${selectedCard._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -219,18 +219,24 @@ const FlashcardApp = () => {
           ))}
         </div>
 
-        {/* Flashcard Display */}
-        {selectedCard && (
-          <motion.div
-            key={selectedCard._id}
-            className="w-full max-w-2xl aspect-video bg-white rounded-xl shadow-2xl p-8 cursor-pointer flex items-center justify-center text-2xl font-bold text-gray-800"
-            onClick={() => setFlipped(!flipped)}
-            animate={{ scaleX: flipped ? -1 : 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            {flipped ? selectedCard.answer : selectedCard.question}
-          </motion.div>
-        )}
+       {/* Flashcard Display */}
+{selectedCard && (
+  <motion.div
+    key={selectedCard._id}
+    className="w-full max-w-2xl aspect-video bg-white rounded-xl shadow-2xl p-8 cursor-pointer flex items-center justify-center text-2xl font-bold text-gray-800"
+    onClick={() => setFlipped(!flipped)}
+    animate={{ rotateY: flipped ? 180 : 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <motion.div
+      animate={{ rotateY: flipped ? 180 : 0 }}
+      className="w-full text-center"
+    >
+      {flipped ? selectedCard.answer : selectedCard.question}
+    </motion.div>
+  </motion.div>
+)}
+
 
         {selectedCard && (
           <div className="mt-4 flex gap-4">
