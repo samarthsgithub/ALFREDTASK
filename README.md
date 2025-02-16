@@ -35,7 +35,8 @@ A modern Flashcard App built with React, Tailwind CSS, and Framer Motion. This a
 - **Deployment**: Render (Backend), Vercel (Frontend)  
 
 ## 📸 Screenshots  
-(Add some screenshots of your app here)  
+ <img width="1439" alt="Screenshot 2025-02-16 at 8 06 46 PM" src="https://github.com/user-attachments/assets/c5a5adc1-7776-4e84-bb8f-0dd387da5a25" />
+
 
 ## 🔧 Installation & Setup  
 1. Clone the repository:  
