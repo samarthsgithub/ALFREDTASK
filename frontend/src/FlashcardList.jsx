@@ -33,7 +33,7 @@ const FlashcardApp = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://localhost:5001/api/flashcards", {
+      const response = await fetch("https://alfredtask-ydv9.onrender.com/api/flashcards", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const FlashcardApp = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/flashcards", {
+      const response = await fetch("https://alfredtask-ydv9.onrender.com/api/flashcards", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const FlashcardApp = () => {
     const newBox = isCorrect ? Math.min(selectedCard.box + 1, 5) : 1;
 
     try {
-      const response = await fetch(`http://localhost:5001/api/flashcards/${selectedCard._id}`, {
+      const response = await fetch(`https://alfredtask-ydv9.onrender.com/flashcards/${selectedCard._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

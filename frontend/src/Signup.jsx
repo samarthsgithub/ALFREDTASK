@@ -30,7 +30,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5001/api/users/signup", form);
+            await axios.post("https://alfredtask-ydv9.onrender.com/api/users/signup", form);
             navigate("/signin");
         } catch (error) {
             alert("Signup failed");
